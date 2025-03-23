@@ -33,15 +33,26 @@ const CountryList: React.FC = () => {
     []
   );
 
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value),
+    []
+  );
+
+  const handleSortOrderChange = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) =>
+      setSortOrder(e.target.value as SortOrder),
+    []
+  );
+
   return (
     <div className={styles.container}>
       <Controls
         searchTerm={searchTerm}
-        onSearchChange={(e) => setSearchTerm(e.target.value)}
+        onSearchChange={handleSearchChange}
         regionFilter={regionFilter}
         onRegionFilterChange={handleRegionFilter}
         sortOrder={sortOrder}
-        onSortOrderChange={(e) => setSortOrder(e.target.value as SortOrder)}
+        onSortOrderChange={handleSortOrderChange}
       />
       <div className={styles.countryGrid}>
         {processedCountries.length > 0 ? (
