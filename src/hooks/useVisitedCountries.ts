@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const useVisitedCountries = () => {
   const [visitedCountries, setVisitedCountries] = useState<string[]>(() => {
@@ -10,13 +10,13 @@ const useVisitedCountries = () => {
     localStorage.setItem('visitedCountries', JSON.stringify(visitedCountries));
   }, [visitedCountries]);
 
-  const toggleVisited = (countryName: string) => {
+  const toggleVisited = useCallback((countryName: string) => {
     setVisitedCountries((prev) =>
       prev.includes(countryName)
         ? prev.filter((name) => name !== countryName)
         : [...prev, countryName]
     );
-  };
+  }, []);
 
   return { visitedCountries, toggleVisited };
 };

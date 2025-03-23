@@ -29,11 +29,11 @@ Before optimization, we used the React Dev Tools Profiler to analyze the applica
 
 | Metric                            | Before Optimization | After Optimization | Improvement |
 | --------------------------------- | ------------------- | ------------------ | ----------- |
-| **Commit Duration (Sorting)**     | ~45ms               | ~25ms              | 44%         |
-| **Commit Duration (Searching)**   | ~50ms               | ~30ms              | 40%         |
-| **Render Duration (CountryList)** | ~25ms               | ~15ms              | 40%         |
-| **Render Duration (CountryCard)** | ~15ms               | ~5ms               | 67%         |
-| **Render Duration (Controls)**    | ~10ms               | ~5ms               | 50%         |
+| **Commit Duration (Sorting)**     | ~11ms               | ~3.1ms             | 71.8%       |
+| **Commit Duration (Searching)**   | ~8.8ms              | ~7.1ms             | 19.3%       |
+| **Render Duration (CountryList)** | ~1.2ms              | ~0.7ms             | 41.7%       |
+| **Render Duration (CountryCard)** | ~0.2ms              | ~0ms               | 100%        |
+| **Render Duration (Controls)**    | ~0.3ms              | ~0.2ms             | 33.3%       |
 | **Unnecessary Re-renders**        | High                | Low                | Significant |
 
 #### Visual Representation:
@@ -45,13 +45,19 @@ Before optimization, we used the React Dev Tools Profiler to analyze the applica
 
 **Screenshots of the Profiler:**
 
-**Before Optimization:**  
-![Flame Graph Before](./docs/flame_before.png)  
-![Ranked Chart Before](./docs/ranked_before.png)
+**Before Optimization:**
+![Sorting Before](./docs/sort_americas.JPG)
+![Search Before](./docs/search_ca.JPG)
+![CountryList Before](./docs/countryList1.png)  
+![CountryCard Before](./docs/countryCard1.png)
+![Controls Before](./docs/controls1.png)
 
-**After Optimization:**  
-![Flame Graph After](./docs/flame_after.png)  
-![Ranked Chart After](./docs/ranked_after.png)
+**After Optimization:**
+![Sorting After](./docs/sort_americas2.JPG)
+![Search After](./docs/search_ca2.JPG)
+![CountryList After](./docs/countryList2.png)
+![CountryCard After](./docs/countrycard2.png)
+![Controls After](./docs/controls2.png)
 
 ### Optimization with React.memo and useMemo
 
@@ -64,5 +70,3 @@ Before optimization, we used the React Dev Tools Profiler to analyze the applica
 ### Conclusion
 
 Through the use of `React.memo` and `useMemo`, we significantly reduced unnecessary renders, improving performance across the application. Searching and sorting operations now execute faster, and UI interactions are smoother. The React Dev Tools Profiler confirmed these improvements through reduced commit and render durations.
-
-Future improvements could include virtualization techniques for further performance gains when handling a large number of countries.
