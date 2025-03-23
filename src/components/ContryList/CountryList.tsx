@@ -53,9 +53,9 @@ const CountryList: React.FC = () => {
               toggleVisited={toggleVisited}
             />
           ))
-        ) : (
+        ) : countries.length > 0 && searchTerm !== '' ? (
           <div className={styles.noResults}>Nothing found</div>
-        )}
+        ) : null}
       </div>
     </div>
   );
