@@ -46,17 +46,37 @@ Before optimization, we used the React Dev Tools Profiler to analyze the applica
 **Screenshots of the Profiler:**
 
 **Before Optimization:**
+
+**_Sorting Before_**
 ![Sorting Before](./docs/sort_americas.JPG)
+
+**_Search Before_**
 ![Search Before](./docs/search_ca.JPG)
-![CountryList Before](./docs/countryList1.png)  
+
+**_CountryList Before_**
+![CountryList Before](./docs/countryList1.png)
+
+**_CountryCard Before_**
 ![CountryCard Before](./docs/countryCard1.png)
+
+**_Controls Before_**
 ![Controls Before](./docs/controls1.png)
 
 **After Optimization:**
+
+**_Sorting After_**
 ![Sorting After](./docs/sort_americas2.JPG)
+
+**_Search After_**
 ![Search After](./docs/search_ca2.JPG)
+
+**_CountryList After_**
 ![CountryList After](./docs/countryList2.png)
+
+**_CountryCard After_**
 ![CountryCard After](./docs/countrycard2.png)
+
+**_Controls After_**
 ![Controls After](./docs/controls2.png)
 
 ### Optimization with React.memo and useMemo
