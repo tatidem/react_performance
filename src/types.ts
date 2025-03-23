@@ -25,3 +25,10 @@ export interface CountryCardProps {
   isVisited: boolean;
   toggleVisited: (countryName: string) => void;
 }
+
+export interface SelectInputProps {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  options: { value: string; label: string }[];
+  className?: string;
+}
